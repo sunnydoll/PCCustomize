@@ -1,0 +1,31 @@
+﻿@model IPagedList<ComputerListViewModel>
+
+@*<div>
+    <form method="get">
+
+        <input type="search" name="searchTerm" id="searchTerm" style="width: 70%; margin-top: 9px" />
+        <input type="submit" style="width: 20%" value="Search By Name" class="btn btn-primary" />
+    </form>
+</div>*@
+
+@*@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "computerList"
+    }))
+{
+    <input type="search" name="searchTerm" style="width: 70%; margin-top: 9px" />
+    <input type="submit" value="Search By Name" style="width: 20%"  class="btn btn-primary" />
+}*@
+
+<form method="get" action="@Url.Action("Index")" 
+      data-otf-ajax="true" data-otf-target="#computerList">
+
+    <input type="search" name="searchTerm" data-otf-autocomplete="@Url.Action("Autocomplete")" style="width: 70%; margin-top: 9px"  />
+    <input type="submit" value="Search By Name" style="width: 20%"  class="btn btn-primary" />
+</form>
+
+@Html.Partial("_PCList", Model)
+

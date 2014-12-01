@@ -1,0 +1,26 @@
+﻿@model IPagedList<ComputerListViewModel>
+<div id="computerList">
+    <div class="pagedList" data-otf-target="#computerList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+        PagedListRenderOptions.MinimalWithItemCountText)
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            @*<h3>Name: @item.Name</h3>*@
+            <h3>@Html.ActionLink(item.Name, "Details", "Computer", new { id = item.Id }, null)</h3>
+            <div>
+                Price: @item.Price USD
+            </div>
+
+            <div>
+                Last Topic: @item.LastUpdate
+            </div>
+            <div>
+                Topics: @item.NumberOfTopics
+            </div>
+            <hr />
+        </div> 
+    }
+</div>

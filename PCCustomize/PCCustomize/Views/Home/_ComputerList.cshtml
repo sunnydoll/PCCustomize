@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PCCustomize.Models.ComputerListViewModel>
+<div id="computerList">
+    @foreach (var item in Model)
+    {
+        <div>
+            @*<h3>Name: @item.Name</h3>*@
+            <h3>@Html.ActionLink(item.Name, "Details", "Computer", new { id = item.Id }, null)</h3>
+            <div>
+                Price: @item.Price USD
+            </div>
+
+            <div>
+                Last Topic: @item.LastUpdate
+            </div>
+            <div>
+                Topics: @item.NumberOfTopics
+            </div>
+            <hr />
+        </div> 
+    }
+</div>

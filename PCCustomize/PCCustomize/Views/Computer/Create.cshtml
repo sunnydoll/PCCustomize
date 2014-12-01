@@ -1,0 +1,125 @@
+﻿@model PCCustomize.Models.Computer
+
+@{    
+    ViewBag.Title = "New Customize PC";
+    ViewBag.PadTitle = "Customize a new Computer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Customized Computer</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price) (USD)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherBoard)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherBoard)
+            @Html.ValidationMessageFor(model => model.MotherBoard)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CPU)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CPU)
+            @Html.ValidationMessageFor(model => model.CPU)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ram)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ram)
+            @Html.ValidationMessageFor(model => model.Ram)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GraphicCard)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GraphicCard)
+            @Html.ValidationMessageFor(model => model.GraphicCard)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Disk)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Disk)
+            @Html.ValidationMessageFor(model => model.Disk)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Monitor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Monitor)
+            @Html.ValidationMessageFor(model => model.Monitor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DVDdrive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DVDdrive)
+            @Html.ValidationMessageFor(model => model.DVDdrive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mouse)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mouse)
+            @Html.ValidationMessageFor(model => model.Mouse)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.KeyBoard)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.KeyBoard)
+            @Html.ValidationMessageFor(model => model.KeyBoard)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" class="btn" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

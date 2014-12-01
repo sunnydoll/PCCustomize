@@ -1,0 +1,82 @@
+﻿@{    
+    ViewBag.Title = "Comtact";
+    ViewBag.PadTitle = "Comtact Me";
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<div class="whity content">
+    <div class="posts">
+        <div class="entry">
+
+            <div class="row">
+                <div class="span7">
+                    <div class="padd">
+                        <div class="co-form">
+                            <form class="form-horizontal" method="post">
+                                <fieldset>
+                                    <div class="control-group">
+                                        <label class="control-label" for="name">Name</label>
+                                        <div class="controls">
+                                            <input type="text" class="input-medium" id="name" name="name" data-val="true" data-val-required="*">
+                                            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="email">Email</label>
+                                        <div class="controls">
+                                            <input type="text" class="input-medium" id="email" name="email" data-val="true" data-val-required="*" data-val-email="Not Valid">
+                                            <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="website">Website</label>
+                                        <div class="controls">
+                                            <input type="text" class="input-medium" id="website" name="website" data-val="true" data-val-required="*">
+                                            <span class="field-validation-valid" data-valmsg-for="website" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="comment">Message</label>
+                                        <div class="controls">
+                                            <textarea class="input-medium" id="comment" rows="3" name="comment" data-val="true" data-val-required="*"></textarea>
+                                            <span class="field-validation-valid" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn">Send</button>
+                                        @if (ViewBag.MailSent != null && ViewBag.MailSent == true)
+                                        {
+                                            <div>Mail Sent</div>
+                                        }
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="padd">
+                        <p class="caddress">
+                            <address>
+                                <strong>Address</strong><br>
+                                4xxx Winter Break APT3,<br>
+                                Philadelphia, PA 19104<br>
+                                <abbr title="Phone">Phone:</abbr>
+                                (267) 876-xxxx.<br>
+                                <br>
+                                <strong>Zhichao Cao</strong><br>
+                                <a href="mailto:#">zc77@drexel.com</a>
+                            </address>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

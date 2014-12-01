@@ -1,0 +1,164 @@
+﻿@model PCCustomize.Models.Computer
+
+@{
+    ViewBag.Title = "Customized PC Details";
+    ViewBag.PadTitle = "Customized Computer Details";
+    ViewBag.InitModule = "msgIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Scripts/msgindex.js"></script>
+}
+<fieldset>
+    <legend>Customized Computer</legend>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Name)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Price)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price) (USD)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.MotherBoard)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MotherBoard)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.CPU)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CPU)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Ram)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ram)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.GraphicCard)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GraphicCard)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Disk)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Disk)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Monitor)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Monitor)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.DVDdrive)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DVDdrive)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Mouse)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mouse)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.KeyBoard)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KeyBoard)
+    </div>
+
+    <div class="display-label">
+        <h3>
+            @Html.DisplayNameFor(model => model.Description)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+<div data-ng-view=""></div>
+
+@*<div data-ng-controller="msgIndexController">
+    <div class="message-header">
+        <h1>Discussion Message Board</h1>
+        <div>Message Count: {{ dataCount }}</div>
+    </div>
+
+    <div class="progress progress-striped active" data-ng-show="isBusy">
+        <div class="bar" style="width: 100%;"></div>
+    </div>
+
+    <div class="messages">
+        <div class="message row" data-ng-repeat="i in data">
+            <div class="title span10">
+                {{i.title}}
+            </div>
+            <div class="date span2">
+                {{i.created | date:"MM-DD-YYYY"}}
+            </div>
+            <div class="contents span10">
+                {{i.body}}
+            </div>
+            <div class="date span2">
+                by -- {{i.userName}}
+            </div>
+            <div class="span11 toolbar">
+                <button class="btn btn-primary">Reply</button>
+            </div>
+            <div class="replies span10">
+                <div class="reply" data-ng-repeat="r in i.replies">
+                    <div class="created pull-right">
+                        {{ r.created | date:"medium" }}
+                    </div>
+                    <div class="content">
+                        {{ r.body }}
+                    </div>
+                    <div>
+                        by -- {{r.userName}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
