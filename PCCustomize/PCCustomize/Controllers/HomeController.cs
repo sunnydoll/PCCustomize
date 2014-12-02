@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PCCustomize.Models;
-using PCCustomize.Services;
 using PagedList;
 
 namespace PCCustomize.Controllers
@@ -13,13 +12,11 @@ namespace PCCustomize.Controllers
     {
         CustomizeDB _db = new CustomizeDB();
 
-        private IMailService _mail;
         private IMessage _msg;
 
 
-        public HomeController(IMailService mail, IMessage msg)
+        public HomeController(IMessage msg)
         {
-            _mail = mail;
             _msg = msg;
         }
 
@@ -67,11 +64,6 @@ namespace PCCustomize.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            return View();
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (_db != null)
@@ -80,22 +72,6 @@ namespace PCCustomize.Controllers
             }
 
             base.Dispose(disposing);
-        }
-
-        [HttpPost]
-        public ActionResult Contact(Contact model)
-        {
-            var msg = string.Format("Comment from: {1}{0}Email: {2}{0}Website: {3}{0}Comment{4}",
-                Environment.NewLine,
-                model.Name,
-                model.Email,
-                model.Website,
-                model.Comment);
-            if(_mail.SendMail("zc77@drexel.edu", "zc77@drexel.edu", "Website Contact", msg))
-            {
-                ViewBag.MailSent = true;
-            }
-            return View();
         }
 
     }

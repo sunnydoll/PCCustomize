@@ -10,7 +10,6 @@ namespace PCCustomize.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using PCCustomize.Models;
-    using PCCustomize.Services;
     using WebApiContrib.IoC.Ninject;
 
     public static class NinjectWebCommon 
@@ -66,11 +65,6 @@ namespace PCCustomize.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-#if DEBUG
-            kernel.Bind<IMailService>().To<MockMailService>().InRequestScope();
-#else
-            kernel.Bind<IMailService>().To<MailService>().InRequestScope();
-#endif
             kernel.Bind<CustomizeDB>().To<CustomizeDB>().InRequestScope();
             kernel.Bind<IMessage>().To<MessageRepository>().InRequestScope();
         }        
