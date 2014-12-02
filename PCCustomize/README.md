@@ -17,6 +17,6 @@ There are some environment tools required to setup as follows:<br />
 All things listed above are easily to download and install by a product provided by Microsoft which is Web Platform Installer.<br />
 <br />
 After you setup all required tools,<br />
-1.You need find out my database files which are stored under PCCustomize\PCCustomize\App_Data folder, attach these files in your SQL Server,<br />
-2.You need find the Web.config file under PCCustomize\PCCustomize\ folder, find and modify the content between the pair of tag "connectionStrings" to your environment.<br />
+1.You need find out my database files which are stored under PCCustomize\PCCustomize\App_Data folder, attach these files in your SQL Server.<br />
+2.You need find the Web.config file under PCCustomize\PCCustomize\ folder, find and modify the content between the pair of tag "connectionStrings" to fit your environment.<br />
 3.Open the file PCCustomize.sln under PCCustomize\PCCustomize\ folder by your Visual Studio Express 2012 and press Ctrl+F5 to run the project. Then you can open this web application in your default browser.<br />
